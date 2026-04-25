@@ -1,0 +1,96 @@
+[
+  {
+    "text": "On 2016-11-08, customer Claire Gute from the Consumer segment placed an order in Louisville, Kentucky (South region). Ordered 2 units of Fellowes PB500 Electric Punch Plastic Comb Binding Machine via Standard Class shipping. Sales: $731.94, Discount: 0%, Profit: $219.58 (30% margin). Category: Technology > Machines.",
+    "metadata": {
+      "doc_type": "transaction",
+      "year": 2016,
+      "month": 11,
+      "category": "Technology",
+      "sub_category": "Machines",
+      "region": "South",
+      "segment": "Consumer"
+    }
+  },
+  {
+    "text": "On 2015-03-22, customer Sean O'Donnell from the Corporate segment placed an order in Fort Lauderdale, Florida (South region). Ordered 3 units of Bretford CR4500 Series Slim Rectangular Table via Second Class shipping. Sales: $957.58, Discount: 45%, Profit: -$383.03 (-40% margin). Category: Furniture > Tables.",
+    "metadata": {
+      "doc_type": "transaction",
+      "year": 2015,
+      "month": 3,
+      "category": "Furniture",
+      "sub_category": "Tables",
+      "region": "South",
+      "segment": "Corporate"
+    }
+  },
+  {
+    "text": "January 2017 Monthly Summary: Total sales $45,231 across 87 orders. Top performing category was Technology with $18,400 (40.7% of total). Office Supplies contributed $16,100 and Furniture $10,731. Best region was West with $16,200 in sales followed by East with $14,800. Average discount applied was 14.2%. Total profit $6,842 representing a 15.1% margin. Consumer segment drove 52% of orders.",
+    "metadata": {
+      "doc_type": "monthly",
+      "year": 2017,
+      "month": 1
+    }
+  },
+  {
+    "text": "November 2016 Monthly Summary: Total sales $78,120 across 164 orders, highest single month in 2016. Technology led with $34,200 (43.8%). West region dominated with $28,400. Heavy Q4 promotional activity pushed average discount to 19.3%. Total profit $9,840 at 12.6% margin. Consumer segment accounted for 58% of November orders, reflecting holiday purchasing patterns.",
+    "metadata": {
+      "doc_type": "monthly",
+      "year": 2016,
+      "month": 11
+    }
+  },
+  {
+    "text": "Technology Category Performance in 2016: Total annual sales $245,320 across 892 orders. Top sub-categories were Phones ($98,400, 40.1%), Machines ($54,200, 22.1%), and Accessories ($42,100, 17.2%). Average profit margin 17.3%, highest among all categories. Average discount 12.1%. Best performing region for Technology was West ($89,400). Consumer segment accounted for 48% of Technology sales.",
+    "metadata": {
+      "doc_type": "category",
+      "year": 2016,
+      "category": "Technology"
+    }
+  },
+  {
+    "text": "Furniture Category Performance in 2017: Total annual sales $182,390 across 643 orders. Dominated by Chairs ($74,600, 40.9%) and Tables ($51,200, 28.1%). Profit margin only 2.5%, lowest among all categories, dragged down by heavy discounting on Tables (avg 31.4% discount). West region led with $64,100. Home Office segment over-indexed relative to other categories at 24% of Furniture orders.",
+    "metadata": {
+      "doc_type": "category",
+      "year": 2017,
+      "category": "Furniture"
+    }
+  },
+  {
+    "text": "Phones Sub-Category Overall Performance (2014-2017): Total sales $330,007 making it the highest revenue sub-category. Sold across all 4 regions with West leading at $124,900. Average profit margin 14.9%. Discount rarely applied, average 9.8%. Most popular in Consumer segment (61% of orders). Sales grew consistently year-over-year: $61,200 (2014), $74,500 (2015), $98,400 (2016), $95,907 (2017).",
+    "metadata": {
+      "doc_type": "sub_category",
+      "category": "Technology",
+      "sub_category": "Phones"
+    }
+  },
+  {
+    "text": "Tables Sub-Category Overall Performance (2014-2017): Total sales $206,966 but chronic unprofitability with average margin of -17.2%, the worst of any sub-category. Heavy discounting (avg 31.4%) is the primary cause. All regions run negative margins on Tables. Corporate segment is the largest buyer at 44% of orders. Despite high revenue, Tables represent a consistent loss-making product line across the entire 4-year period.",
+    "metadata": {
+      "doc_type": "sub_category",
+      "category": "Furniture",
+      "sub_category": "Tables"
+    }
+  },
+  {
+    "text": "West Region Performance in 2015: Total sales $187,450 across 412 orders, highest among all regions. Top category was Technology ($78,200, 41.7%). Top states were California ($112,400) and Washington ($34,200). Top cities were Los Angeles ($67,300) and Seattle ($28,900). Profit margin 18.2%, above company average of 12.4%. Average discount 13.1%. Corporate segment slightly dominant at 38% of orders.",
+    "metadata": {
+      "doc_type": "regional",
+      "year": 2015,
+      "region": "West"
+    }
+  },
+  {
+    "text": "Central Region Performance in 2016: Total sales $143,220 across 298 orders, lowest among all regions. Furniture was unusually dominant at 34.1% of sales vs company average of 28.7%. Profit margin 8.1%, well below company average of 12.4%. Heavy discounting on Tables and Binders dragged profitability. Top state was Texas ($48,200) but with only 6.9% margin. Consumer segment led at 54% of orders.",
+    "metadata": {
+      "doc_type": "regional",
+      "year": 2016,
+      "region": "Central"
+    }
+  },
+  {
+    "text": "Overall Sales Performance (2014-2017): Total revenue $2,297,201 across 9,994 transactions. Annual growth: $484,247 (2014), $470,533 (2015), $609,206 (2016), $733,215 (2017), showing 51.4% growth over 4 years. Best performing category: Technology (36.4% of revenue). Most profitable region: West (31.2% of total profit). Highest margin sub-category: Labels (53.1%). Most discounted sub-category: Binders (avg 32.1% discount). Consumer segment largest at 51.2% of orders. Peak sales month historically is November followed by December, indicating strong Q4 seasonality.",
+    "metadata": {
+      "doc_type": "global"
+    }
+  }
+]
