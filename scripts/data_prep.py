@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import json
 from collections import Counter
-
+import json as _json
 
 df = pd.read_csv('../data/Sample - Superstore.csv', encoding='latin-1')
 
@@ -109,18 +109,95 @@ summary_docs = []
 monthly = df.groupby(['Order Year', 'Order Month', 'Order Month Name']).agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
-    num_orders=('Order ID', 'nunique')
+    num_orders=('Order ID', 'nunique'),
+    avg_discount=('Discount', 'mean')
 ).reset_index()
 
+
+monthly_cat = df.groupby(
+    ['Order Year', 'Order Month', 'Category']
+)['Sales'].sum().reset_index()
+
+
+monthly_reg = df.groupby(
+    ['Order Year', 'Order Month', 'Region']
+)['Sales'].sum().reset_index()
+
+
+monthly_seg = df.groupby(
+    ['Order Year', 'Order Month', 'Segment']
+)['Order ID'].nunique().reset_index()
+monthly_seg.columns = ['Order Year', 'Order Month', 'Segment', 'seg_orders']
+
 for _, row in monthly.iterrows():
-    text = (
-        f"In {row['Order Month Name']} {int(row['Order Year'])}, "
+    year  = int(row['Order Year'])
+    month = int(row['Order Month'])
+
+    
+    cat_data = monthly_cat[
+        (monthly_cat['Order Year'] == year) &
+        (monthly_cat['Order Month'] == month)
+    ].sort_values('Sales', ascending=False).reset_index(drop=True)
+
+    top_cat       = cat_data.iloc[0]
+    top_cat_pct   = (top_cat['Sales'] / row['total_sales']) * 100
+    other_cats    = cat_data.iloc[1:]
+    other_cat_str = " and ".join(
+        [f"{r['Category']} ${r['Sales']:.0f}" for _, r in other_cats.iterrows()]
+    )
+
+   
+    reg_data = monthly_reg[
+        (monthly_reg['Order Year'] == year) &
+        (monthly_reg['Order Month'] == month)
+    ].sort_values('Sales', ascending=False).reset_index(drop=True)
+
+    top_reg    = reg_data.iloc[0]
+    second_reg = reg_data.iloc[1] if len(reg_data) > 1 else None
+    second_reg_str = (
+        f" followed by {second_reg['Region']} with ${second_reg['Sales']:.0f}"
+        if second_reg is not None else ""
+    )
+
+    
+    seg_data = monthly_seg[
+        (monthly_seg['Order Year'] == year) &
+        (monthly_seg['Order Month'] == month)
+    ].sort_values('seg_orders', ascending=False).reset_index(drop=True)
+
+    top_seg       = seg_data.iloc[0]
+    total_seg_ord = seg_data['seg_orders'].sum()
+    top_seg_pct   = (top_seg['seg_orders'] / total_seg_ord) * 100
+
+    
+    margin = (row['total_profit'] / row['total_sales']) * 100 if row['total_sales'] != 0 else 0
+
+    
+    existing = (
+        f"In {row['Order Month Name']} {year}, "
         f"the store had {int(row['num_orders'])} orders with total sales of "
         f"${row['total_sales']:.2f} and total profit of ${row['total_profit']:.2f}."
     )
+
+    enriched = (
+        f" Top performing category was {top_cat['Category']} with "
+        f"${top_cat['Sales']:.0f} ({top_cat_pct:.1f}% of total). "
+        f"{other_cat_str}. "
+        f"Best region was {top_reg['Region']} with ${top_reg['Sales']:.0f} in sales"
+        f"{second_reg_str}. "
+        f"Average discount applied was {row['avg_discount']*100:.1f}%. "
+        f"Total profit ${row['total_profit']:.0f} representing a {margin:.1f}% margin. "
+        f"{top_seg['Segment']} segment drove "
+        f"{top_seg_pct:.0f}% of orders."
+    )
+
+    text = existing + enriched
+
     summary_docs.append({
-        'type': 'monthly_summary', 'text': text,
-        'year': int(row['Order Year']), 'month': int(row['Order Month'])
+        'type' : 'monthly_summary',
+        'text' : text,
+        'year' : year,
+        'month': month
     })
 
 # Yearly Summary
@@ -529,6 +606,7 @@ for order_id, group in df.groupby('Order ID', sort=False):
 
     order_meta[order_id] = {
         'doc_type'    : 'transaction',
+        'order_id'    : order_id,
         'year'        : int(first['Order Year']),
         'month'       : int(first['Order Month']),
         'category'    : top_category,
@@ -540,7 +618,6 @@ for order_id, group in df.groupby('Order ID', sort=False):
 for i, row in order_texts.iterrows():
     all_docs.append({
         'doc_id'  : i,
-        'order_id': row['Order ID'],
         'text'    : row['text'],
         'metadata': order_meta[row['Order ID']]
     })
@@ -563,16 +640,12 @@ for doc_type, count in sorted(all_type_counts.items()):
     print(f"   - {doc_type}: {count}")
 
 
-import json as _json
 print(_json.dumps(all_docs[0], indent=4))
 
 
 with open('../data/datastore/docs.json', 'w') as f:
     json.dump(all_docs, f, indent=2)
 
-print(f"\n Saved {len(all_docs)} total documents to data/docs.json")
+print(f"\n Saved {len(all_docs)} total documents")
 print(f"   - Order transaction docs : {len(order_texts)}")
 print(f"   - Summary docs           : {len(summary_docs)}")
-print(f"\n   Teammate can load with:")
-print(f"   import json")
-print(f"   docs = json.load(open('../data/datastore/docs.json'))")
