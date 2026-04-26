@@ -519,29 +519,52 @@ for doc_type, count in type_counts.items():
 all_docs = []
 
 
+order_meta = {}
+for order_id, group in df.groupby('Order ID', sort=False):
+    group = group.reset_index(drop=True)
+    first = group.iloc[0]
+
+    top_category    = group['Category'].mode()[0]
+    top_subcategory = group['Sub-Category'].mode()[0]
+
+    order_meta[order_id] = {
+        'doc_type'    : 'transaction',
+        'year'        : int(first['Order Year']),
+        'month'       : int(first['Order Month']),
+        'category'    : top_category,
+        'sub_category': top_subcategory,
+        'region'      : first['Region'],
+        'segment'     : first['Segment']
+    }
+
 for i, row in order_texts.iterrows():
     all_docs.append({
-        'doc_id': i,
-        'text': row['text'],
-        'type': 'transaction',
-        'order_id': row['Order ID']
+        'doc_id'  : i,
+        'order_id': row['Order ID'],
+        'text'    : row['text'],
+        'metadata': order_meta[row['Order ID']]
     })
-
 
 for i, doc in enumerate(summary_docs):
     all_docs.append({
-        'doc_id': len(order_texts) + i,
-        'text': doc['text'],
-        'type': doc['type'],
-        'metadata': {k: v for k, v in doc.items() if k != 'text'}
+        'doc_id' : len(order_texts) + i,
+        'text'   : doc['text'],
+        'metadata': {
+            'doc_type': doc['type'],
+            **{k: v for k, v in doc.items() if k not in ['text', 'type']}
+        }
     })
 
-# Print breakdown before saving
+
 print(f"\n   Total documents to save: {len(all_docs)}")
-print(f"   Breakdown by type:")
-all_type_counts = Counter(doc['type'] for doc in all_docs)
+print(f"   Breakdown by doc_type:")
+all_type_counts = Counter(doc['metadata']['doc_type'] for doc in all_docs)
 for doc_type, count in sorted(all_type_counts.items()):
     print(f"   - {doc_type}: {count}")
+
+
+import json as _json
+print(_json.dumps(all_docs[0], indent=4))
 
 
 with open('../data/datastore/docs.json', 'w') as f:
