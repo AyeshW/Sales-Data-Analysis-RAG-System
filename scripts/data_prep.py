@@ -646,6 +646,6 @@ print(_json.dumps(all_docs[0], indent=4))
 with open('../data/datastore/docs.json', 'w') as f:
     json.dump(all_docs, f, indent=2)
 
-print(f"\n Saved {len(all_docs)} total documents")
+print(f"\n Saved {len(all_docs)} total documents.")
 print(f"   - Order transaction docs : {len(order_texts)}")
 print(f"   - Summary docs           : {len(summary_docs)}")
