@@ -14,7 +14,6 @@ class Config:
         self.chroma_persist_dir: str = os.getenv("CHROMA_PERSIST_DIR", "chroma_store")
         self.collection_name: str = os.getenv("COLLECTION_NAME", "sales_rag")
         self.top_k: int = self._get_int("TOP_K", default=10)
-        self.debug_enabled: bool = self._get_bool("DEBUG_ENABLED", default=False)
 
     @staticmethod
     def _get_required(key: str) -> str:
@@ -37,20 +36,6 @@ class Config:
             raise ValueError(
                 f"Invalid integer value for environment variable {key}: {raw!r}"
             ) from exc
-
-    @staticmethod
-    def _get_bool(key: str, default: bool) -> bool:
-        raw = os.getenv(key)
-        if raw is None or raw.strip() == "":
-            return default
-        normalized = raw.strip().lower()
-        if normalized in {"true"}:
-            return True
-        if normalized in {"false"}:
-            return False
-        raise ValueError(
-            f"Invalid boolean value for environment variable {key}: {raw!r}"
-        )
 
 
 config = Config()

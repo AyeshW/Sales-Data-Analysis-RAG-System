@@ -19,6 +19,7 @@ class Retriever:
         query: str,
         top_k: int | None = None,
         override_filters: dict | None = None,
+        debug: bool = False,
     ) -> list[dict]:
         effective_top_k = top_k if top_k is not None else config.top_k
 
@@ -26,11 +27,11 @@ class Retriever:
 
         if override_filters is not None:
             filters = override_filters
-            if config.debug_enabled:
+            if debug:
                 print(f"Selected filters (override): {filters}")
         else:
             filters = self.query_analyzer.analyze(query)
-            if config.debug_enabled:
+            if debug:
                 explanation = self.query_analyzer.explain(query)
                 print(explanation)
 
@@ -40,7 +41,7 @@ class Retriever:
             filters=filters if filters else None,
         )
 
-        if config.debug_enabled:
+        if debug:
             print("Retrieved results:")
             for idx, item in enumerate(results, start=1):
                 print(f"[{idx}] score={item.get('score')}")
