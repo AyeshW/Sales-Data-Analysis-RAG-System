@@ -142,3 +142,7 @@ cython_debug/
 
 # ChromaDB
 chroma_store/
+
+# IDE specific files
+.vscode/
+.idea/
