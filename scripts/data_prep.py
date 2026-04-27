@@ -567,12 +567,12 @@ import json as _json
 print(_json.dumps(all_docs[0], indent=4))
 
 
-with open('../data/datastore/docs.json', 'w') as f:
+with open('../data/datastore/chunks.json', 'w') as f:
     json.dump(all_docs, f, indent=2)
 
-print(f"\n Saved {len(all_docs)} total documents to data/docs.json")
+print(f"\n Saved {len(all_docs)} total documents to data/chunks.json")
 print(f"   - Order transaction docs : {len(order_texts)}")
 print(f"   - Summary docs           : {len(summary_docs)}")
 print(f"\n   Teammate can load with:")
 print(f"   import json")
-print(f"   docs = json.load(open('../data/datastore/docs.json'))")
+print(f"   docs = json.load(open('../data/datastore/chunks.json'))")
