@@ -70559,7 +70559,7 @@
   },
   {
     "doc_id": 5057,
-    "text": "In 2014, the store recorded total sales of $484247.50 with a total profit of $49543.97 across 969 unique orders. The average order value was $242.97. The best performing month of 2014 was September based on total sales.",
+    "text": "In 2014, the store recorded total sales of $484247.50 with a total profit of $49543.97 and an overall profit margin of 10.2% across 969 unique orders. The average order value was $242.97. The best performing month of 2014 was September based on total sales.",
     "metadata": {
       "doc_type": "yearly_summary",
       "year": 2014
@@ -70567,7 +70567,7 @@
   },
   {
     "doc_id": 5058,
-    "text": "In 2015, the store recorded total sales of $470532.51 with a total profit of $61618.60 across 1038 unique orders. The average order value was $223.85. The best performing month of 2015 was November based on total sales.",
+    "text": "In 2015, the store recorded total sales of $470532.51 with a total profit of $61618.60 and an overall profit margin of 13.1% across 1038 unique orders. The average order value was $223.85. The best performing month of 2015 was November based on total sales.",
     "metadata": {
       "doc_type": "yearly_summary",
       "year": 2015
@@ -70575,7 +70575,7 @@
   },
   {
     "doc_id": 5059,
-    "text": "In 2016, the store recorded total sales of $609205.60 with a total profit of $81795.17 across 1315 unique orders. The average order value was $235.49. The best performing month of 2016 was December based on total sales.",
+    "text": "In 2016, the store recorded total sales of $609205.60 with a total profit of $81795.17 and an overall profit margin of 13.4% across 1315 unique orders. The average order value was $235.49. The best performing month of 2016 was December based on total sales.",
     "metadata": {
       "doc_type": "yearly_summary",
       "year": 2016
@@ -70583,7 +70583,7 @@
   },
   {
     "doc_id": 5060,
-    "text": "In 2017, the store recorded total sales of $733215.26 with a total profit of $93439.27 across 1687 unique orders. The average order value was $221.38. The best performing month of 2017 was November based on total sales.",
+    "text": "In 2017, the store recorded total sales of $733215.26 with a total profit of $93439.27 and an overall profit margin of 12.7% across 1687 unique orders. The average order value was $221.38. The best performing month of 2017 was November based on total sales.",
     "metadata": {
       "doc_type": "yearly_summary",
       "year": 2017
@@ -70591,7 +70591,7 @@
   },
   {
     "doc_id": 5061,
-    "text": "In Q1 (Jan-Mar) of 2014, the store generated total sales of $74447.80 with total profit of $3811.23 across 131 orders. The top performing product category this quarter was Technology.",
+    "text": "In Q1 (Jan-Mar) of 2014, the store generated total sales of $74447.80 with total profit of $3811.23 and a profit margin of 5.1% across 131 orders. The top performing product category this quarter was Technology.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2014,
@@ -70600,7 +70600,7 @@
   },
   {
     "doc_id": 5062,
-    "text": "In Q2 (Apr-Jun) of 2014, the store generated total sales of $86538.76 with total profit of $11204.07 across 201 orders. The top performing product category this quarter was Office Supplies.",
+    "text": "In Q2 (Apr-Jun) of 2014, the store generated total sales of $86538.76 with total profit of $11204.07 and a profit margin of 12.9% across 201 orders. The top performing product category this quarter was Office Supplies.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2014,
@@ -70609,7 +70609,7 @@
   },
   {
     "doc_id": 5063,
-    "text": "In Q3 (Jul-Sep) of 2014, the store generated total sales of $143633.21 with total profit of $12804.72 across 267 orders. The top performing product category this quarter was Office Supplies.",
+    "text": "In Q3 (Jul-Sep) of 2014, the store generated total sales of $143633.21 with total profit of $12804.72 and a profit margin of 8.9% across 267 orders. The top performing product category this quarter was Office Supplies.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2014,
@@ -70618,7 +70618,7 @@
   },
   {
     "doc_id": 5064,
-    "text": "In Q4 (Oct-Dec) of 2014, the store generated total sales of $179627.73 with total profit of $21723.95 across 370 orders. The top performing product category this quarter was Furniture.",
+    "text": "In Q4 (Oct-Dec) of 2014, the store generated total sales of $179627.73 with total profit of $21723.95 and a profit margin of 12.1% across 370 orders. The top performing product category this quarter was Furniture.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2014,
@@ -70627,7 +70627,7 @@
   },
   {
     "doc_id": 5065,
-    "text": "In Q1 (Jan-Mar) of 2015, the store generated total sales of $68851.74 with total profit of $9264.94 across 144 orders. The top performing product category this quarter was Furniture.",
+    "text": "In Q1 (Jan-Mar) of 2015, the store generated total sales of $68851.74 with total profit of $9264.94 and a profit margin of 13.5% across 144 orders. The top performing product category this quarter was Furniture.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2015,
@@ -70636,7 +70636,7 @@
   },
   {
     "doc_id": 5066,
-    "text": "In Q2 (Apr-Jun) of 2015, the store generated total sales of $89124.19 with total profit of $12190.92 across 214 orders. The top performing product category this quarter was Office Supplies.",
+    "text": "In Q2 (Apr-Jun) of 2015, the store generated total sales of $89124.19 with total profit of $12190.92 and a profit margin of 13.7% across 214 orders. The top performing product category this quarter was Office Supplies.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2015,
@@ -70645,7 +70645,7 @@
   },
   {
     "doc_id": 5067,
-    "text": "In Q3 (Jul-Sep) of 2015, the store generated total sales of $130259.58 with total profit of $16853.62 across 274 orders. The top performing product category this quarter was Furniture.",
+    "text": "In Q3 (Jul-Sep) of 2015, the store generated total sales of $130259.58 with total profit of $16853.62 and a profit margin of 12.9% across 274 orders. The top performing product category this quarter was Furniture.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2015,
@@ -70654,7 +70654,7 @@
   },
   {
     "doc_id": 5068,
-    "text": "In Q4 (Oct-Dec) of 2015, the store generated total sales of $182297.01 with total profit of $23309.12 across 406 orders. The top performing product category this quarter was Technology.",
+    "text": "In Q4 (Oct-Dec) of 2015, the store generated total sales of $182297.01 with total profit of $23309.12 and a profit margin of 12.8% across 406 orders. The top performing product category this quarter was Technology.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2015,
@@ -70663,7 +70663,7 @@
   },
   {
     "doc_id": 5069,
-    "text": "In Q1 (Jan-Mar) of 2016, the store generated total sales of $93237.18 with total profit of $11441.37 across 179 orders. The top performing product category this quarter was Technology.",
+    "text": "In Q1 (Jan-Mar) of 2016, the store generated total sales of $93237.18 with total profit of $11441.37 and a profit margin of 12.3% across 179 orders. The top performing product category this quarter was Technology.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2016,
@@ -70672,7 +70672,7 @@
   },
   {
     "doc_id": 5070,
-    "text": "In Q2 (Apr-Jun) of 2016, the store generated total sales of $136082.30 with total profit of $16390.34 across 294 orders. The top performing product category this quarter was Technology.",
+    "text": "In Q2 (Apr-Jun) of 2016, the store generated total sales of $136082.30 with total profit of $16390.34 and a profit margin of 12.0% across 294 orders. The top performing product category this quarter was Technology.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2016,
@@ -70681,7 +70681,7 @@
   },
   {
     "doc_id": 5071,
-    "text": "In Q3 (Jul-Sep) of 2016, the store generated total sales of $143787.36 with total profit of $15823.60 across 378 orders. The top performing product category this quarter was Furniture.",
+    "text": "In Q3 (Jul-Sep) of 2016, the store generated total sales of $143787.36 with total profit of $15823.60 and a profit margin of 11.0% across 378 orders. The top performing product category this quarter was Furniture.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2016,
@@ -70690,7 +70690,7 @@
   },
   {
     "doc_id": 5072,
-    "text": "In Q4 (Oct-Dec) of 2016, the store generated total sales of $236098.75 with total profit of $38139.86 across 464 orders. The top performing product category this quarter was Technology.",
+    "text": "In Q4 (Oct-Dec) of 2016, the store generated total sales of $236098.75 with total profit of $38139.86 and a profit margin of 16.2% across 464 orders. The top performing product category this quarter was Technology.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2016,
@@ -70699,7 +70699,7 @@
   },
   {
     "doc_id": 5073,
-    "text": "In Q1 (Jan-Mar) of 2017, the store generated total sales of $123144.86 with total profit of $23506.20 across 240 orders. The top performing product category this quarter was Technology.",
+    "text": "In Q1 (Jan-Mar) of 2017, the store generated total sales of $123144.86 with total profit of $23506.20 and a profit margin of 19.1% across 240 orders. The top performing product category this quarter was Technology.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2017,
@@ -70708,7 +70708,7 @@
   },
   {
     "doc_id": 5074,
-    "text": "In Q2 (Apr-Jun) of 2017, the store generated total sales of $133764.37 with total profit of $15499.21 across 367 orders. The top performing product category this quarter was Office Supplies.",
+    "text": "In Q2 (Apr-Jun) of 2017, the store generated total sales of $133764.37 with total profit of $15499.21 and a profit margin of 11.6% across 367 orders. The top performing product category this quarter was Office Supplies.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2017,
@@ -70717,7 +70717,7 @@
   },
   {
     "doc_id": 5075,
-    "text": "In Q3 (Jul-Sep) of 2017, the store generated total sales of $196251.96 with total profit of $26985.13 across 448 orders. The top performing product category this quarter was Office Supplies.",
+    "text": "In Q3 (Jul-Sep) of 2017, the store generated total sales of $196251.96 with total profit of $26985.13 and a profit margin of 13.8% across 448 orders. The top performing product category this quarter was Office Supplies.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2017,
@@ -70726,7 +70726,7 @@
   },
   {
     "doc_id": 5076,
-    "text": "In Q4 (Oct-Dec) of 2017, the store generated total sales of $280054.07 with total profit of $27448.73 across 632 orders. The top performing product category this quarter was Technology.",
+    "text": "In Q4 (Oct-Dec) of 2017, the store generated total sales of $280054.07 with total profit of $27448.73 and a profit margin of 9.8% across 632 orders. The top performing product category this quarter was Technology.",
     "metadata": {
       "doc_type": "quarterly_summary",
       "year": 2017,
@@ -70759,7 +70759,7 @@
   },
   {
     "doc_id": 5080,
-    "text": "The Central region recorded total sales of $501239.89 and total profit of $39706.36 from 1175 orders.",
+    "text": "The Central region recorded total sales of $501239.89 and total profit of $39706.36 with a profit margin of 7.9% from 1175 orders.",
     "metadata": {
       "doc_type": "regional_summary",
       "region": "Central"
@@ -70767,7 +70767,7 @@
   },
   {
     "doc_id": 5081,
-    "text": "The East region recorded total sales of $678781.24 and total profit of $91522.78 from 1401 orders.",
+    "text": "The East region recorded total sales of $678781.24 and total profit of $91522.78 with a profit margin of 13.5% from 1401 orders.",
     "metadata": {
       "doc_type": "regional_summary",
       "region": "East"
@@ -70775,7 +70775,7 @@
   },
   {
     "doc_id": 5082,
-    "text": "The South region recorded total sales of $391721.91 and total profit of $46749.43 from 822 orders.",
+    "text": "The South region recorded total sales of $391721.91 and total profit of $46749.43 with a profit margin of 11.9% from 822 orders.",
     "metadata": {
       "doc_type": "regional_summary",
       "region": "South"
@@ -70783,7 +70783,7 @@
   },
   {
     "doc_id": 5083,
-    "text": "The West region recorded total sales of $725457.82 and total profit of $108418.45 from 1611 orders.",
+    "text": "The West region recorded total sales of $725457.82 and total profit of $108418.45 with a profit margin of 14.9% from 1611 orders.",
     "metadata": {
       "doc_type": "regional_summary",
       "region": "West"
@@ -70927,7 +70927,7 @@
   },
   {
     "doc_id": 5101,
-    "text": "During Fall, the store averaged $234.26 per transaction with total sales of $860434.00 and total profit of $104109.94 across 1858 orders. This is the best performing season overall.",
+    "text": "During Fall, the store averaged $234.26 per transaction with total sales of $860434.00 and total profit of $104109.94 representing a profit margin of 12.1% across 1858 orders. This is the best performing season overall.",
     "metadata": {
       "doc_type": "seasonality_summary",
       "season": "Fall"
@@ -70935,7 +70935,7 @@
   },
   {
     "doc_id": 5102,
-    "text": "During Spring, the store averaged $237.16 per transaction with total sales of $497796.43 and total profit of $62593.43 across 1066 orders.",
+    "text": "During Spring, the store averaged $237.16 per transaction with total sales of $497796.43 and total profit of $62593.43 representing a profit margin of 12.6% across 1066 orders.",
     "metadata": {
       "doc_type": "seasonality_summary",
       "season": "Spring"
@@ -70943,7 +70943,7 @@
   },
   {
     "doc_id": 5103,
-    "text": "During Summer, the store averaged $215.19 per transaction with total sales of $459000.84 and total profit of $56895.40 across 1043 orders.",
+    "text": "During Summer, the store averaged $215.19 per transaction with total sales of $459000.84 and total profit of $56895.40 representing a profit margin of 12.4% across 1043 orders.",
     "metadata": {
       "doc_type": "seasonality_summary",
       "season": "Summer"
@@ -70951,7 +70951,7 @@
   },
   {
     "doc_id": 5104,
-    "text": "During Winter, the store averaged $229.76 per transaction with total sales of $479969.59 and total profit of $62798.25 across 1042 orders.",
+    "text": "During Winter, the store averaged $229.76 per transaction with total sales of $479969.59 and total profit of $62798.25 representing a profit margin of 13.1% across 1042 orders.",
     "metadata": {
       "doc_type": "seasonality_summary",
       "season": "Winter"
@@ -71109,7 +71109,7 @@
   },
   {
     "doc_id": 5123,
-    "text": "In 2014, the Central region achieved total sales of $103838.16 with total profit of $539.55 from 230 orders.",
+    "text": "In 2014, the Central region achieved total sales of $103838.16 with total profit of $539.55 and a profit margin of 0.5% from 230 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2014,
@@ -71118,7 +71118,7 @@
   },
   {
     "doc_id": 5124,
-    "text": "In 2014, the East region achieved total sales of $128680.46 with total profit of $17059.61 from 261 orders.",
+    "text": "In 2014, the East region achieved total sales of $128680.46 with total profit of $17059.61 and a profit margin of 13.3% from 261 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2014,
@@ -71127,7 +71127,7 @@
   },
   {
     "doc_id": 5125,
-    "text": "In 2014, the South region achieved total sales of $103845.84 with total profit of $11879.12 from 165 orders.",
+    "text": "In 2014, the South region achieved total sales of $103845.84 with total profit of $11879.12 and a profit margin of 11.4% from 165 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2014,
@@ -71136,7 +71136,7 @@
   },
   {
     "doc_id": 5126,
-    "text": "In 2014, the West region achieved total sales of $147883.03 with total profit of $20065.69 from 313 orders.",
+    "text": "In 2014, the West region achieved total sales of $147883.03 with total profit of $20065.69 and a profit margin of 13.6% from 313 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2014,
@@ -71145,7 +71145,7 @@
   },
   {
     "doc_id": 5127,
-    "text": "In 2015, the Central region achieved total sales of $102874.22 with total profit of $11716.80 from 234 orders.",
+    "text": "In 2015, the Central region achieved total sales of $102874.22 with total profit of $11716.80 and a profit margin of 11.4% from 234 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2015,
@@ -71154,7 +71154,7 @@
   },
   {
     "doc_id": 5128,
-    "text": "In 2015, the East region achieved total sales of $156332.06 with total profit of $21091.01 from 296 orders.",
+    "text": "In 2015, the East region achieved total sales of $156332.06 with total profit of $21091.01 and a profit margin of 13.5% from 296 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2015,
@@ -71163,7 +71163,7 @@
   },
   {
     "doc_id": 5129,
-    "text": "In 2015, the South region achieved total sales of $71359.98 with total profit of $8318.59 from 170 orders.",
+    "text": "In 2015, the South region achieved total sales of $71359.98 with total profit of $8318.59 and a profit margin of 11.7% from 170 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2015,
@@ -71172,7 +71172,7 @@
   },
   {
     "doc_id": 5130,
-    "text": "In 2015, the West region achieved total sales of $139966.25 with total profit of $20492.19 from 338 orders.",
+    "text": "In 2015, the West region achieved total sales of $139966.25 with total profit of $20492.19 and a profit margin of 14.6% from 338 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2015,
@@ -71181,7 +71181,7 @@
   },
   {
     "doc_id": 5131,
-    "text": "In 2016, the Central region achieved total sales of $147429.38 with total profit of $19899.16 from 305 orders.",
+    "text": "In 2016, the Central region achieved total sales of $147429.38 with total profit of $19899.16 and a profit margin of 13.5% from 305 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2016,
@@ -71190,7 +71190,7 @@
   },
   {
     "doc_id": 5132,
-    "text": "In 2016, the East region achieved total sales of $180685.82 with total profit of $20141.60 from 374 orders.",
+    "text": "In 2016, the East region achieved total sales of $180685.82 with total profit of $20141.60 and a profit margin of 11.1% from 374 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2016,
@@ -71199,7 +71199,7 @@
   },
   {
     "doc_id": 5133,
-    "text": "In 2016, the South region achieved total sales of $93610.22 with total profit of $17702.81 from 214 orders.",
+    "text": "In 2016, the South region achieved total sales of $93610.22 with total profit of $17702.81 and a profit margin of 18.9% from 214 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2016,
@@ -71208,7 +71208,7 @@
   },
   {
     "doc_id": 5134,
-    "text": "In 2016, the West region achieved total sales of $187480.18 with total profit of $24051.61 from 422 orders.",
+    "text": "In 2016, the West region achieved total sales of $187480.18 with total profit of $24051.61 and a profit margin of 12.8% from 422 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2016,
@@ -71217,7 +71217,7 @@
   },
   {
     "doc_id": 5135,
-    "text": "In 2017, the Central region achieved total sales of $147098.13 with total profit of $7550.84 from 406 orders.",
+    "text": "In 2017, the Central region achieved total sales of $147098.13 with total profit of $7550.84 and a profit margin of 5.1% from 406 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2017,
@@ -71226,7 +71226,7 @@
   },
   {
     "doc_id": 5136,
-    "text": "In 2017, the East region achieved total sales of $213082.90 with total profit of $33230.56 from 470 orders.",
+    "text": "In 2017, the East region achieved total sales of $213082.90 with total profit of $33230.56 and a profit margin of 15.6% from 470 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2017,
@@ -71235,7 +71235,7 @@
   },
   {
     "doc_id": 5137,
-    "text": "In 2017, the South region achieved total sales of $122905.86 with total profit of $8848.91 from 273 orders.",
+    "text": "In 2017, the South region achieved total sales of $122905.86 with total profit of $8848.91 and a profit margin of 7.2% from 273 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2017,
@@ -71244,7 +71244,7 @@
   },
   {
     "doc_id": 5138,
-    "text": "In 2017, the West region achieved total sales of $250128.37 with total profit of $43808.96 from 538 orders.",
+    "text": "In 2017, the West region achieved total sales of $250128.37 with total profit of $43808.96 and a profit margin of 17.5% from 538 orders.",
     "metadata": {
       "doc_type": "regional_yearly_summary",
       "year": 2017,
@@ -71361,7 +71361,7 @@
   },
   {
     "doc_id": 5151,
-    "text": "In Q1 (Jan-Mar), the Central region generated total sales of $81110.80 with total profit of $3565.67 across 170 orders.",
+    "text": "In Q1 (Jan-Mar), the Central region generated total sales of $81110.80 with total profit of $3565.67 and a profit margin of 4.4% across 170 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 1,
@@ -71370,7 +71370,7 @@
   },
   {
     "doc_id": 5152,
-    "text": "In Q1 (Jan-Mar), the East region generated total sales of $66551.73 with total profit of $6716.77 across 187 orders.",
+    "text": "In Q1 (Jan-Mar), the East region generated total sales of $66551.73 with total profit of $6716.77 and a profit margin of 10.1% across 187 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 1,
@@ -71379,7 +71379,7 @@
   },
   {
     "doc_id": 5153,
-    "text": "In Q1 (Jan-Mar), the South region generated total sales of $98282.53 with total profit of $14464.95 across 119 orders.",
+    "text": "In Q1 (Jan-Mar), the South region generated total sales of $98282.53 with total profit of $14464.95 and a profit margin of 14.7% across 119 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 1,
@@ -71388,7 +71388,7 @@
   },
   {
     "doc_id": 5154,
-    "text": "In Q1 (Jan-Mar), the West region generated total sales of $113736.51 with total profit of $23276.34 across 218 orders.",
+    "text": "In Q1 (Jan-Mar), the West region generated total sales of $113736.51 with total profit of $23276.34 and a profit margin of 20.5% across 218 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 1,
@@ -71397,7 +71397,7 @@
   },
   {
     "doc_id": 5155,
-    "text": "In Q2 (Apr-Jun), the Central region generated total sales of $95084.49 with total profit of $5826.59 across 252 orders.",
+    "text": "In Q2 (Apr-Jun), the Central region generated total sales of $95084.49 with total profit of $5826.59 and a profit margin of 6.1% across 252 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 2,
@@ -71406,7 +71406,7 @@
   },
   {
     "doc_id": 5156,
-    "text": "In Q2 (Apr-Jun), the East region generated total sales of $127445.53 with total profit of $19686.73 across 297 orders.",
+    "text": "In Q2 (Apr-Jun), the East region generated total sales of $127445.53 with total profit of $19686.73 and a profit margin of 15.4% across 297 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 2,
@@ -71415,7 +71415,7 @@
   },
   {
     "doc_id": 5157,
-    "text": "In Q2 (Apr-Jun), the South region generated total sales of $86485.55 with total profit of $13688.78 across 197 orders.",
+    "text": "In Q2 (Apr-Jun), the South region generated total sales of $86485.55 with total profit of $13688.78 and a profit margin of 15.8% across 197 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 2,
@@ -71424,7 +71424,7 @@
   },
   {
     "doc_id": 5158,
-    "text": "In Q2 (Apr-Jun), the West region generated total sales of $136494.05 with total profit of $16082.44 across 330 orders.",
+    "text": "In Q2 (Apr-Jun), the West region generated total sales of $136494.05 with total profit of $16082.44 and a profit margin of 11.8% across 330 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 2,
@@ -71433,7 +71433,7 @@
   },
   {
     "doc_id": 5159,
-    "text": "In Q3 (Jul-Sep), the Central region generated total sales of $134506.16 with total profit of $4024.03 across 305 orders.",
+    "text": "In Q3 (Jul-Sep), the Central region generated total sales of $134506.16 with total profit of $4024.03 and a profit margin of 3.0% across 305 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 3,
@@ -71442,7 +71442,7 @@
   },
   {
     "doc_id": 5160,
-    "text": "In Q3 (Jul-Sep), the East region generated total sales of $187768.84 with total profit of $20680.75 across 396 orders.",
+    "text": "In Q3 (Jul-Sep), the East region generated total sales of $187768.84 with total profit of $20680.75 and a profit margin of 11.0% across 396 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 3,
@@ -71451,7 +71451,7 @@
   },
   {
     "doc_id": 5161,
-    "text": "In Q3 (Jul-Sep), the South region generated total sales of $83030.60 with total profit of $12701.11 across 217 orders.",
+    "text": "In Q3 (Jul-Sep), the South region generated total sales of $83030.60 with total profit of $12701.11 and a profit margin of 15.3% across 217 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 3,
@@ -71460,7 +71460,7 @@
   },
   {
     "doc_id": 5162,
-    "text": "In Q3 (Jul-Sep), the West region generated total sales of $208626.51 with total profit of $35061.19 across 449 orders.",
+    "text": "In Q3 (Jul-Sep), the West region generated total sales of $208626.51 with total profit of $35061.19 and a profit margin of 16.8% across 449 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 3,
@@ -71469,7 +71469,7 @@
   },
   {
     "doc_id": 5163,
-    "text": "In Q4 (Oct-Dec), the Central region generated total sales of $190538.44 with total profit of $26290.07 across 448 orders.",
+    "text": "In Q4 (Oct-Dec), the Central region generated total sales of $190538.44 with total profit of $26290.07 and a profit margin of 13.8% across 448 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 4,
@@ -71478,7 +71478,7 @@
   },
   {
     "doc_id": 5164,
-    "text": "In Q4 (Oct-Dec), the East region generated total sales of $297015.14 with total profit of $44438.53 across 521 orders.",
+    "text": "In Q4 (Oct-Dec), the East region generated total sales of $297015.14 with total profit of $44438.53 and a profit margin of 15.0% across 521 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 4,
@@ -71487,7 +71487,7 @@
   },
   {
     "doc_id": 5165,
-    "text": "In Q4 (Oct-Dec), the South region generated total sales of $123923.23 with total profit of $5894.59 across 289 orders.",
+    "text": "In Q4 (Oct-Dec), the South region generated total sales of $123923.23 with total profit of $5894.59 and a profit margin of 4.8% across 289 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 4,
@@ -71496,7 +71496,7 @@
   },
   {
     "doc_id": 5166,
-    "text": "In Q4 (Oct-Dec), the West region generated total sales of $266600.75 with total profit of $33998.47 across 614 orders.",
+    "text": "In Q4 (Oct-Dec), the West region generated total sales of $266600.75 with total profit of $33998.47 and a profit margin of 12.8% across 614 orders.",
     "metadata": {
       "doc_type": "quarterly_region_summary",
       "quarter": 4,

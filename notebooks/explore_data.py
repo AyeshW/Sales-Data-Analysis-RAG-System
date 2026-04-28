@@ -56,10 +56,7 @@ print(f"  Segments    : {list(df['Segment'].unique())}")
 print(f"  Ship Modes  : {list(df['Ship Mode'].unique())}")
 print(
     f"  Sub-categories ({df['Sub-Category'].nunique()}): {list(df['Sub-Category'].unique())}")
-print("\n  Numerical summary:")
-print(df[['Sales', 'Profit', 'Quantity', 'Discount',
-      'Profit Margin']].describe().round(2).to_string())
-print("="*55)
+
 
 print("\n Plot 1: Data type overview...")
 
