@@ -19,6 +19,16 @@ from src.vectorstore.store import VectorStore
 SEPARATOR = "=" * 80
 SUB_SEPARATOR = "-" * 80
 
+PREDEFINED_QUESTIONS = [
+    "What is the sales trend over the 4-year period?",
+    "Which months show the highest sales? Is there seasonality?",
+    "How does the West region compare to the East in terms of profit?",
+    "Which product category generates the most revenue?",
+    "What sub-categories have the highest profit margins?",
+    "Which region has the best sales performance?",
+    "Which segment drives the most orders and highest profit margin?",
+]
+
 COMMANDS = {
     "/exit or /quit": "Exit the program",
     "/debug": "Toggle debug mode on/off",
@@ -43,6 +53,16 @@ def print_banner(doc_count: int) -> None:
     print(f"Collection documents: {doc_count}")
     print_help()
     print(SEPARATOR)
+
+
+def print_question_menu() -> None:
+    print("  ════════════════════════════════════════════════════════════════")
+    print("  Example Questions:")
+    for index, question in enumerate(PREDEFINED_QUESTIONS, start=1):
+        print(f"    [{index}]  {question}")
+    print("  ════════════════════════════════════════════════════════════════")
+    print("  Enter a number to pick a question, or type your own question.")
+    print("  Commands: /exit  /debug  /model  /count  /help")
 
 
 def confirm_ollama_or_exit() -> None:
@@ -76,9 +96,8 @@ def run_query(rag_chain: RAGChain, question: str, debug_mode: bool) -> None:
         result = rag_chain.run(question, debug=debug_mode)
         elapsed = time.perf_counter() - start_time
         answer = result.get("answer", "")
-        print("Answer:\n")
-        print(answer)
-        print(f"\nResponse time: {elapsed:.2f}s")
+        print(f"### Answer: \n{answer}\n")
+        print(f"Response time: {elapsed:.2f}s")
     except Exception as exc:
         print(f"Error: {exc}")
     finally:
@@ -95,15 +114,21 @@ def main() -> None:
 
     rag_chain = RAGChain()
     debug_mode = False
+    show_menu = True
 
     while True:
         try:
-            user_input = input("\n> ").strip()
+            if show_menu:
+                print_question_menu()
+                user_input = input("  > ").strip()
+            else:
+                user_input = input("\n  > ").strip()
         except KeyboardInterrupt:
             print("\nGoodbye!")
             break
 
         if not user_input:
+            show_menu = False
             continue
 
         lowered = user_input.lower()
@@ -114,18 +139,35 @@ def main() -> None:
             debug_mode = not debug_mode
             state = "ON" if debug_mode else "OFF"
             print(f"Debug mode: {state}")
+            show_menu = False
             continue
         if lowered == "/model":
             print(f"Active model: {config.model_name}")
+            show_menu = False
             continue
         if lowered == "/count":
             print(f"Collection documents: {doc_count}")
+            show_menu = False
             continue
         if lowered == "/help":
             print_help()
+            show_menu = False
+            continue
+
+        if user_input.isdigit():
+            selection = int(user_input)
+            if 1 <= selection <= len(PREDEFINED_QUESTIONS):
+                question = PREDEFINED_QUESTIONS[selection - 1]
+                print(f"Question: {question}")
+                run_query(rag_chain, question, debug_mode)
+                show_menu = True
+            else:
+                print(f"Please enter a number between 1 and {len(PREDEFINED_QUESTIONS)}.")
+                show_menu = False
             continue
 
         run_query(rag_chain, user_input, debug_mode)
+        show_menu = True
 
 
 if __name__ == "__main__":
