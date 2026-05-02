@@ -130,48 +130,44 @@ monthly_seg = df.groupby(
 monthly_seg.columns = ['Order Year', 'Order Month', 'Segment', 'seg_orders']
 
 for _, row in monthly.iterrows():
-    year  = int(row['Order Year'])
+    year = int(row['Order Year'])
     month = int(row['Order Month'])
-
 
     cat_data = monthly_cat[
         (monthly_cat['Order Year'] == year) &
         (monthly_cat['Order Month'] == month)
     ].sort_values('Sales', ascending=False).reset_index(drop=True)
 
-    top_cat       = cat_data.iloc[0]
-    top_cat_pct   = (top_cat['Sales'] / row['total_sales']) * 100
-    other_cats    = cat_data.iloc[1:]
+    top_cat = cat_data.iloc[0]
+    top_cat_pct = (top_cat['Sales'] / row['total_sales']) * 100
+    other_cats = cat_data.iloc[1:]
     other_cat_str = " and ".join(
         [f"{r['Category']} ${r['Sales']:.0f}" for _, r in other_cats.iterrows()]
     )
-
 
     reg_data = monthly_reg[
         (monthly_reg['Order Year'] == year) &
         (monthly_reg['Order Month'] == month)
     ].sort_values('Sales', ascending=False).reset_index(drop=True)
 
-    top_reg    = reg_data.iloc[0]
+    top_reg = reg_data.iloc[0]
     second_reg = reg_data.iloc[1] if len(reg_data) > 1 else None
     second_reg_str = (
         f" followed by {second_reg['Region']} with ${second_reg['Sales']:.0f}"
         if second_reg is not None else ""
     )
 
-
     seg_data = monthly_seg[
         (monthly_seg['Order Year'] == year) &
         (monthly_seg['Order Month'] == month)
     ].sort_values('seg_orders', ascending=False).reset_index(drop=True)
 
-    top_seg       = seg_data.iloc[0]
+    top_seg = seg_data.iloc[0]
     total_seg_ord = seg_data['seg_orders'].sum()
-    top_seg_pct   = (top_seg['seg_orders'] / total_seg_ord) * 100
+    top_seg_pct = (top_seg['seg_orders'] / total_seg_ord) * 100
 
-
-    margin = (row['total_profit'] / row['total_sales']) * 100 if row['total_sales'] != 0 else 0
-
+    margin = (row['total_profit'] / row['total_sales']) * \
+        100 if row['total_sales'] != 0 else 0
 
     existing = (
         f"In {row['Order Month Name']} {year}, "
@@ -194,9 +190,9 @@ for _, row in monthly.iterrows():
     text = existing + enriched
 
     summary_docs.append({
-        'type' : 'monthly_summary',
-        'text' : text,
-        'year' : year,
+        'type': 'monthly_summary',
+        'text': text,
+        'year': year,
         'month': month
     })
 
@@ -226,12 +222,14 @@ best_month_map = dict(zip(
 for _, row in yearly_detail.iterrows():
     year = int(row['Order Year'])
     best_month = best_month_map.get(year, 'N/A')
+    yearly_margin = (row['total_profit'] / row['total_sales']
+                     * 100) if row['total_sales'] != 0 else 0
     text = (
         f"In {year}, the store recorded total sales of ${row['total_sales']:.2f} "
-        f"with a total profit of ${row['total_profit']:.2f} across "
-        f"{int(row['num_orders'])} unique orders. The average order value was "
-        f"${row['avg_order_value']:.2f}. The best performing month of {year} "
-        f"was {best_month} based on total sales."
+        f"with a total profit of ${row['total_profit']:.2f} and an overall profit margin of "
+        f"{yearly_margin:.1f}% across {int(row['num_orders'])} unique orders. "
+        f"The average order value was ${row['avg_order_value']:.2f}. "
+        f"The best performing month of {year} was {best_month} based on total sales."
     )
     summary_docs.append({'type': 'yearly_summary', 'text': text, 'year': year})
 
@@ -266,10 +264,12 @@ for _, row in quarterly.iterrows():
     quarter = int(row['Order Quarter'])
     q_name = quarter_names[quarter]
     best_cat = best_cat_map.get((year, quarter), 'N/A')
+    q_margin = (row['total_profit'] / row['total_sales']
+                * 100) if row['total_sales'] != 0 else 0
     text = (
         f"In {q_name} of {year}, the store generated total sales of "
         f"${row['total_sales']:.2f} with total profit of ${row['total_profit']:.2f} "
-        f"across {int(row['num_orders'])} orders. "
+        f"and a profit margin of {q_margin:.1f}% across {int(row['num_orders'])} orders. "
         f"The top performing product category this quarter was {best_cat}."
     )
     summary_docs.append({
@@ -304,9 +304,12 @@ regional = df.groupby('Region').agg(
 ).reset_index()
 
 for _, row in regional.iterrows():
+    reg_margin = (row['total_profit'] / row['total_sales']
+                  * 100) if row['total_sales'] != 0 else 0
     text = (
         f"The {row['Region']} region recorded total sales of ${row['total_sales']:.2f} "
-        f"and total profit of ${row['total_profit']:.2f} from {int(row['num_orders'])} orders."
+        f"and total profit of ${row['total_profit']:.2f} with a profit margin of "
+        f"{reg_margin:.1f}% from {int(row['num_orders'])} orders."
     )
     summary_docs.append({'type': 'regional_summary',
                         'text': text, 'region': row['Region']})
@@ -355,10 +358,13 @@ best_season = seasonal.loc[seasonal['total_sales'].idxmax(), 'Season']
 for _, row in seasonal.iterrows():
     is_best = " This is the best performing season overall." if row[
         'Season'] == best_season else ""
+    sea_margin = (row['total_profit'] / row['total_sales']
+                  * 100) if row['total_sales'] != 0 else 0
     text = (
         f"During {row['Season']}, the store averaged ${row['avg_sales']:.2f} per transaction "
         f"with total sales of ${row['total_sales']:.2f} and total profit of "
-        f"${row['total_profit']:.2f} across {int(row['num_orders'])} orders.{is_best}"
+        f"${row['total_profit']:.2f} representing a profit margin of {sea_margin:.1f}% "
+        f"across {int(row['num_orders'])} orders.{is_best}"
     )
     summary_docs.append({'type': 'seasonality_summary',
                         'text': text, 'season': row['Season']})
@@ -527,10 +533,12 @@ regional_yearly = df.groupby(['Order Year', 'Region']).agg(
 
 for _, row in regional_yearly.iterrows():
     year = int(row['Order Year'])
+    ry_margin = (row['total_profit'] / row['total_sales']
+                 * 100) if row['total_sales'] != 0 else 0
     text = (
         f"In {year}, the {row['Region']} region achieved total sales of "
         f"${row['total_sales']:.2f} with total profit of ${row['total_profit']:.2f} "
-        f"from {int(row['num_orders'])} orders."
+        f"and a profit margin of {ry_margin:.1f}% from {int(row['num_orders'])} orders."
     )
     summary_docs.append({
         'type': 'regional_yearly_summary', 'text': text,
@@ -575,10 +583,12 @@ quarter_names = {
 
 for _, row in quarterly_region.iterrows():
     q_name = quarter_names[int(row['Order Quarter'])]
+    qr_margin = (row['total_profit'] / row['total_sales']
+                 * 100) if row['total_sales'] != 0 else 0
     text = (
         f"In {q_name}, the {row['Region']} region generated total sales of "
         f"${row['total_sales']:.2f} with total profit of ${row['total_profit']:.2f} "
-        f"across {int(row['num_orders'])} orders."
+        f"and a profit margin of {qr_margin:.1f}% across {int(row['num_orders'])} orders."
     )
     summary_docs.append({
         'type': 'quarterly_region_summary', 'text': text,
@@ -601,31 +611,31 @@ for order_id, group in df.groupby('Order ID', sort=False):
     group = group.reset_index(drop=True)
     first = group.iloc[0]
 
-    top_category    = group['Category'].mode()[0]
+    top_category = group['Category'].mode()[0]
     top_subcategory = group['Sub-Category'].mode()[0]
 
     order_meta[order_id] = {
-        'doc_type'    : 'transaction',
-        'order_id'    : order_id,
-        'year'        : int(first['Order Year']),
-        'month'       : int(first['Order Month']),
-        'category'    : top_category,
+        'doc_type': 'transaction',
+        'order_id': order_id,
+        'year': int(first['Order Year']),
+        'month': int(first['Order Month']),
+        'category': top_category,
         'sub_category': top_subcategory,
-        'region'      : first['Region'],
-        'segment'     : first['Segment']
+        'region': first['Region'],
+        'segment': first['Segment']
     }
 
 for i, row in order_texts.iterrows():
     all_docs.append({
-        'doc_id'  : i,
-        'text'    : row['text'],
+        'doc_id': i,
+        'text': row['text'],
         'metadata': order_meta[row['Order ID']]
     })
 
 for i, doc in enumerate(summary_docs):
     all_docs.append({
-        'doc_id' : len(order_texts) + i,
-        'text'   : doc['text'],
+        'doc_id': len(order_texts) + i,
+        'text': doc['text'],
         'metadata': {
             'doc_type': doc['type'],
             **{k: v for k, v in doc.items() if k not in ['text', 'type']}
