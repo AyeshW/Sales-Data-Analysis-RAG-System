@@ -14,6 +14,7 @@ class RAGChain:
             model=config.model_name,
             base_url=config.ollama_base_url,
             temperature=0.1,
+            num_thread=4,
         )
         self.analytical_prompt = ANALYTICAL_PROMPT
         self.fallback_prompt = FALLBACK_PROMPT

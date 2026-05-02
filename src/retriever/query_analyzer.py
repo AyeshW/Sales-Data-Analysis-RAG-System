@@ -113,46 +113,106 @@ class QueryAnalyzer:
 	def _detect_doc_types(text: str) -> list[str]:
 		doc_types: list[str] = []
 
-		time_terms = [
-			"trend",
-			"growth",
-			"year-over-year",
-			"annual",
-			"month",
-			"season",
+		yearly_terms = ["yearly", "annual", "year-over-year", "yoy", "overall", "year", "annually"]
+		if any(term in text for term in yearly_terms):
+			doc_types.extend(
+				[
+					"yearly_summary",
+					"yearly_category_summary",
+					"regional_yearly_summary",
+					"comparative_yearly",
+					"seasonality_pattern_overall",
+				]
+			)
+
+		monthly_terms = ["monthly", "month-over-month", "mom", "month", "months"]
+		if any(term in text for term in monthly_terms):
+			doc_types.extend(
+				[
+					"monthly_summary",
+					"yearly_summary",
+				]
+			)
+		
+		quarterly_seasonal_terms = [
+			"quarterly",
+			"quarter-over-quarter",
+			"qoq",
 			"quarter",
-			"year",
-			"winter",
-			"summer",
-			"fall",
-			"spring",
 			"q1",
 			"q2",
 			"q3",
 			"q4",
+			"winter",
+			"summer",
+			"fall",
+			"spring",
+			"autumn",
+			"seasonality",
+			"season",
 		]
-		if any(term in text for term in time_terms):
+		if any(term in text for term in quarterly_seasonal_terms):
 			doc_types.extend(
 				[
-					"monthly_summary",
 					"quarterly_summary",
-					"regional_yearly_summary",
 					"quarterly_region_summary",
-					"yearly_category_summary",
-					"yearly_summary",
-					"seasonality_summary",
-					"seasonality_pattern_overall",
 					"comparative_yearly",
+					"seasonality_pattern_overall",
+					"seasonality_summary",
 				]
 			)
 
-		category_terms = ["category", "sub-category", "sub category", "product line"]
+		comparative_terms = [
+			"trend",
+			"growth",
+			"compare",
+			"comparison",
+			"impact",
+			"effect",
+			"change",
+			"increase",
+			"decrease",
+			"decline",
+			"rise",
+			"fall",
+			"highest",
+			"lowest",
+			"best",
+			"worst",
+			"top",
+			"most",
+			"least",
+			"versus",
+			"vs",
+			"against",
+			"over",
+		]
+		if any(term in text for term in comparative_terms):
+			doc_types.extend(
+				[
+					"seasonality_pattern_overall",
+					"comparative_yearly",
+					"comparative_category",
+					"comparative_regional",
+					"comparative_segment",
+					"comparative_discount_impact",
+				]
+			)
+
+		category_terms = [
+			"category", 
+			"sub-category", 
+			"sub category", 
+			"product line", 
+			"technology", 
+			"furniture", 
+			"office supplies"
+		]
 		if any(term in text for term in category_terms):
 			doc_types.extend(
 				[
 					"category_summary",
 					"subcategory_summary",
-					"yearly_category_summary",
 					"region_category_summary",
 					"comparative_category",
 				]
@@ -163,9 +223,6 @@ class QueryAnalyzer:
 			doc_types.extend(
 				[
 					"regional_summary",
-					"regional_yearly_summary",
-					"quarterly_region_summary",
-					"region_category_summary",
 					"comparative_regional",
 				]
 			)
