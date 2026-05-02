@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import json
 from collections import Counter
-import json as _json
 
 df = pd.read_csv('../data/Sample - Superstore.csv', encoding='latin-1')
 
@@ -105,7 +104,6 @@ for i in range(3):
 summary_docs = []
 
 # Monthly Summary
-
 monthly = df.groupby(['Order Year', 'Order Month', 'Order Month Name']).agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -426,7 +424,6 @@ text = (
 summary_docs.append({'type': 'comparative_regional', 'text': text})
 
 # Comparative Segment v Segment
-
 segment = df.groupby('Segment').agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -648,10 +645,6 @@ print(f"   Breakdown by doc_type:")
 all_type_counts = Counter(doc['metadata']['doc_type'] for doc in all_docs)
 for doc_type, count in sorted(all_type_counts.items()):
     print(f"   - {doc_type}: {count}")
-
-
-print(_json.dumps(all_docs[0], indent=4))
-
 
 with open('../data/datastore/chunks.json', 'w') as f:
     json.dump(all_docs, f, indent=2)
