@@ -140,9 +140,6 @@ cython_debug/
 # LangGraph
 .langgraph_api/
 
-# ChromaDB
-chroma_store/
-
 # IDE specific files
 .vscode/
 .idea/
