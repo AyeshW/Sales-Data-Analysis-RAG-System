@@ -457,9 +457,11 @@ yearly = df.groupby('Order Year').agg(
 
 year_texts = []
 for _, row in yearly.iterrows():
+    yearly_margin = (row['total_profit'] / row['total_sales']
+                     * 100) if row['total_sales'] != 0 else 0
     year_texts.append(
         f"{int(row['Order Year'])}: sales=${row['total_sales']:.2f}, "
-        f"profit=${row['total_profit']:.2f}, orders={int(row['num_orders'])}"
+        f"profit=${row['total_profit']:.2f},  profit margin={yearly_margin:.1f}%, orders={int(row['num_orders'])}"
     )
 
 text = (
@@ -470,7 +472,7 @@ text = (
 )
 summary_docs.append({'type': 'comparative_yearly', 'text': text})
 
-# COmparative Discount Impact
+# Comparative Discount Impact
 df['Discount Band'] = pd.cut(
     df['Discount'],
     bins=[-0.01, 0.0, 0.2, 0.5, 0.8],

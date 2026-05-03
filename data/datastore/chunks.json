@@ -70987,7 +70987,7 @@
   },
   {
     "doc_id": 5109,
-    "text": "Year-over-year performance comparison: 2014: sales=$484247.50, profit=$49543.97, orders=969 | 2015: sales=$470532.51, profit=$61618.60, orders=1038 | 2016: sales=$609205.60, profit=$81795.17, orders=1315 | 2017: sales=$733215.26, profit=$93439.27, orders=1687. Sales have grown consistently each year, with 2017 being the highest performing year with $733215.26 in total sales.",
+    "text": "Year-over-year performance comparison: 2014: sales=$484247.50, profit=$49543.97,  profit margin=10.2%, orders=969 | 2015: sales=$470532.51, profit=$61618.60,  profit margin=13.1%, orders=1038 | 2016: sales=$609205.60, profit=$81795.17,  profit margin=13.4%, orders=1315 | 2017: sales=$733215.26, profit=$93439.27,  profit margin=12.7%, orders=1687. Sales have grown consistently each year, with 2017 being the highest performing year with $733215.26 in total sales.",
     "metadata": {
       "doc_type": "comparative_yearly"
     }

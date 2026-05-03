@@ -20,13 +20,12 @@ SEPARATOR = "=" * 80
 SUB_SEPARATOR = "-" * 80
 
 PREDEFINED_QUESTIONS = [
-    "What is the sales trend over the 4-year period?",
-    "Which months show the highest sales? Is there seasonality?",
     "How does the West region compare to the East in terms of profit?",
     "Which product category generates the most revenue?",
-    "What sub-categories have the highest profit margins?",
     "Which region has the best sales performance?",
     "Which segment drives the most orders and highest profit margin?",
+    "What is the sales trend over the 4-year period?",
+    "Which months show the highest sales? Is there seasonality?",
 ]
 
 COMMANDS = {
@@ -102,7 +101,6 @@ def run_query(rag_chain: RAGChain, question: str, debug_mode: bool) -> None:
         print(f"Error: {exc}")
     finally:
         timer.cancel()
-        print(SUB_SEPARATOR)
 
 
 def main() -> None:
