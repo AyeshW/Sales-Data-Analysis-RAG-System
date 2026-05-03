@@ -27,7 +27,7 @@ A Retrieval-Augmented Generation system that answers natural language questions 
 
 ![Architecture](resources/images/architecture.png)
 
-The system has two pipelines. The Ingestion Pipeline flows from chunks.json to a Loader & Validator, then into the Embedder (nomic-embed-text) and finally into ChromaDB. The Query Pipeline starts with User Input, passes through the Query Analyzer (intent + metadata filters), then Retriever and ChromaDB (similarity search + metadata filtering), followed by the Prompt Builder and Ollama LLM, returning a Response + Sources.
+The system has two pipelines. The Ingestion Pipeline sends raw data through the data cleaner, then preprocessing to convert it to natural language and chunking, stores chunks.json, then into the Embedder (nomic-embed-text) and finally into ChromaDB. The Query Pipeline starts with User Query, passes through the RAG Chain, then Retriever, which calls the Embedder to get a vector and runs the raw query through the Query Analyzer to get doc_types and metadata filters, sending embeddings + filters to ChromaDB for top K chunks, then back through the RAG Chain followed by the Prompt Builder and Ollama LLM, returning a Response.
 
 ## Project Structure
 
