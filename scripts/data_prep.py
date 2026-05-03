@@ -63,7 +63,7 @@ def order_to_text(order_df):
             if row['Profit'] >= 0 else f"loss of ${abs(row['Profit']):.2f}"
         )
         line = (
-            f"({i+1}) {row['Product Name']} — {row['Category']}/{row['Sub-Category']}, "
+            f"({i+1}) {row['Product Name']} {row['Category']}/{row['Sub-Category']}, "
             f"{int(row['Quantity'])} unit(s), ${row['Sales']:.2f} {discount_str}, {profit_str}."
         )
         product_lines.append(line)
