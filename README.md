@@ -267,7 +267,7 @@ The interactive CLI:
 | EMBEDDING_MODEL    | nomic-embed-text           | Embedding model (served via Ollama)  |
 | CHROMA_PERSIST_DIR | ./chroma_store             | ChromaDB persistence directory       |
 | COLLECTION_NAME    | sales_rag                  | ChromaDB collection name             |
-| TOP_K              | 16                          | Number of chunks retrieved per query |
+| TOP_K              | 10                          | Number of chunks retrieved per query |
 
 Note: To switch to llama3.2:3b, set MODEL_NAME=llama3.2:3b in .env and ensure you have run: ollama pull llama3.2:3b
 
