@@ -18,6 +18,10 @@ from src.vectorstore.store import VectorStore
 
 
 def main():
+    """
+    Run the full ingestion pipeline: load chunks, embed texts, and store in vector database.
+    """
+    
     parser = argparse.ArgumentParser(description="Run full ingestion pipeline")
     parser.add_argument(
         "--chunks-file",

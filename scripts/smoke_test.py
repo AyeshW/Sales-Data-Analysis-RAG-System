@@ -13,6 +13,10 @@ from src.pipeline.rag_chain import RAGChain
 
 
 def main() -> None:
+    """
+    Run a smoke test of the RAG pipeline with predefined questions.
+    """
+    
     questions = [
         "What is the overall sales trend from 2014 to 2017?",
         "Which product category generates the most revenue?",

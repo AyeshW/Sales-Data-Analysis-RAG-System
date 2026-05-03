@@ -13,6 +13,9 @@ from src.vectorstore.store import VectorStore
 
 
 def main() -> None:
+    """
+    Verify the contents of the vector store collection and test basic querying.
+    """
     try:
         store = VectorStore()
         total_docs = store.count()

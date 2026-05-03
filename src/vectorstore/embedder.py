@@ -6,6 +6,10 @@ from src.config import config
 
 
 class Embedder:
+    """
+    Handles text embedding using OllamaEmbeddings. Provides methods to embed both documents and queries.
+    """
+    
     def __init__(self, embedding_model: str, ollama_base_url: str) -> None:
         self.embedding_model = embedding_model
         self.ollama_base_url = ollama_base_url

@@ -9,6 +9,10 @@ from src.vectorstore.store import VectorStore
 
 
 class Retriever:
+    """
+    Handles retrieval of relevant documents from the vector store based on a natural language query.
+    """
+
     def __init__(self) -> None:
         self.embedder = Embedder.from_config()
         self.store = VectorStore()
@@ -21,6 +25,16 @@ class Retriever:
         override_filters: dict | None = None,
         debug: bool = False,
     ) -> list[dict]:
+        """
+            Retrieve relevant documents from the vector store based on the input query.
+            Args:
+                query: The natural language query string.
+                top_k: Optional override for the number of top results to return. If None, uses default from config.
+                override_filters: Optional dict of filters to apply instead of query analysis. Example: {"doc_type": "transaction", "year": 2023}
+                debug: If True, prints debug information about the retrieval process.
+            Returns:
+                A list of retrieved items, where each item is a dict containing at least 'text' and 'metadata' keys.
+        """
         effective_top_k = top_k if top_k is not None else config.top_k
 
         embedding = self.embedder.embed_query(query)

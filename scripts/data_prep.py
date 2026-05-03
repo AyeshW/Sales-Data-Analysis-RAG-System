@@ -8,6 +8,8 @@ df = pd.read_csv('../data/Sample - Superstore.csv', encoding='latin-1')
 print(f"Dataframe shape: {df.shape}")
 print(f"Dataframe columns: {df.columns}")
 
+# Preprocess and clean data
+
 df['Order Date'] = pd.to_datetime(df['Order Date'])
 df['Ship Date'] = pd.to_datetime(df['Ship Date'])
 
@@ -29,6 +31,7 @@ df.to_csv('../data/superstore_clean.csv', index=False)
 print("Preprocessing done.File saved.")
 
 
+# Transaction text builder
 def order_to_text(order_df):
 
     order_df = order_df.reset_index(drop=True)
@@ -86,6 +89,7 @@ def order_to_text(order_df):
     return f"{header} {products_text} {summary}"
 
 
+# Build transaction-level documents (doc_type: transaction)
 grouped = df.groupby('Order ID', sort=False)
 order_records = []
 for order_id, group in grouped:
@@ -103,7 +107,7 @@ for i in range(3):
 
 summary_docs = []
 
-# Monthly Summary
+# Monthly Summary (doc_type: monthly_summary)
 monthly = df.groupby(['Order Year', 'Order Month', 'Order Month Name']).agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -194,7 +198,7 @@ for _, row in monthly.iterrows():
         'month': month
     })
 
-# Yearly Summary
+# Yearly Summary (doc_type: yearly_summary)
 yearly_detail = df.groupby('Order Year').agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -232,7 +236,7 @@ for _, row in yearly_detail.iterrows():
     summary_docs.append({'type': 'yearly_summary', 'text': text, 'year': year})
 
 
-# Quarterly Summary
+# Quarterly Summary (doc_type: quarterly_summary)
 quarterly = df.groupby(['Order Year', 'Order Quarter']).agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -275,8 +279,7 @@ for _, row in quarterly.iterrows():
         'year': year, 'quarter': quarter
     })
 
-# Category Summary
-
+# Category Summary (doc_type: category_summary)
 category = df.groupby('Category').agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -293,8 +296,7 @@ for _, row in category.iterrows():
     summary_docs.append({'type': 'category_summary',
                         'text': text, 'category': row['Category']})
 
-# Region Summary
-
+# Region Summary (doc_type: regional_summary)
 regional = df.groupby('Region').agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -312,7 +314,7 @@ for _, row in regional.iterrows():
     summary_docs.append({'type': 'regional_summary',
                         'text': text, 'region': row['Region']})
 
-# Subcatergory Summary
+# Subcategory Summary (doc_type: subcategory_summary)
 subcat = df.groupby('Sub-Category').agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -335,7 +337,8 @@ for _, row in subcat.iterrows():
         'type': 'subcategory_summary', 'text': text,
         'subcategory': row['Sub-Category']
     })
-# Seasonal Summary Patterns
+
+# Seasonal Summary Patterns (doc_type: seasonality_summary)
 season_map = {
     12: 'Winter', 1: 'Winter', 2: 'Winter',
     3: 'Spring',  4: 'Spring', 5: 'Spring',
@@ -367,7 +370,7 @@ for _, row in seasonal.iterrows():
     summary_docs.append({'type': 'seasonality_summary',
                         'text': text, 'season': row['Season']})
 
-# Combned seasonal pattern
+# Combined seasonal pattern (doc_type: seasonality_pattern_overall)
 season_order = ['Spring', 'Summer', 'Fall', 'Winter']
 season_data = seasonal.set_index('Season')
 season_lines = []
@@ -387,7 +390,7 @@ text = (
 summary_docs.append({'type': 'seasonality_pattern_overall', 'text': text})
 
 
-# Comparative Category vs Category
+# Comparative Category vs Category (doc_type: comparative_category)
 cat_data = category.set_index('Category')
 tech = cat_data.loc['Technology']
 furn = cat_data.loc['Furniture']
@@ -404,7 +407,7 @@ text = (
 )
 summary_docs.append({'type': 'comparative_category', 'text': text})
 
-# Comparative Region v Region
+# Comparative Region v Region (doc_type: comparative_regional)
 reg_data = regional.set_index('Region')
 west = reg_data.loc['West']
 east = reg_data.loc['East']
@@ -423,7 +426,7 @@ text = (
 )
 summary_docs.append({'type': 'comparative_regional', 'text': text})
 
-# Comparative Segment v Segment
+# Comparative Segment v Segment (doc_type: comparative_segment)
 segment = df.groupby('Segment').agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -448,7 +451,7 @@ text = (
 )
 summary_docs.append({'type': 'comparative_segment', 'text': text})
 
-# Comparative Year-over-Year
+# Comparative Year-over-Year (doc_type: comparative_yearly)
 yearly = df.groupby('Order Year').agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -472,7 +475,7 @@ text = (
 )
 summary_docs.append({'type': 'comparative_yearly', 'text': text})
 
-# Comparative Discount Impact
+# Comparative Discount Impact (doc_type: comparative_discount_impact)
 df['Discount Band'] = pd.cut(
     df['Discount'],
     bins=[-0.01, 0.0, 0.2, 0.5, 0.8],
@@ -500,7 +503,7 @@ text = (
 )
 summary_docs.append({'type': 'comparative_discount_impact', 'text': text})
 
-# Yearly Category Breakdown
+# Yearly Category Breakdown (doc_type: yearly_category_summary)
 yearly_cat = df.groupby(['Order Year', 'Category']).agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -523,7 +526,7 @@ for _, row in yearly_cat.iterrows():
     })
 
 
-# Regional Yearly Summary
+# Regional Yearly Summary (doc_type: regional_yearly_summary)
 regional_yearly = df.groupby(['Order Year', 'Region']).agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -544,7 +547,7 @@ for _, row in regional_yearly.iterrows():
         'year': year, 'region': row['Region']
     })
 
-# Regional x Category Summary
+# Regional x Category Summary (doc_type: region_category_summary)
 region_cat = df.groupby(['Region', 'Category']).agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -568,7 +571,7 @@ for _, row in region_cat.iterrows():
         'region': row['Region'], 'category': row['Category']
     })
 
-# Quarterly x Region Summary
+# Quarterly x Region Summary (doc_type: quarterly_region_summary)
 quarterly_region = df.groupby(['Order Quarter', 'Region']).agg(
     total_sales=('Sales', 'sum'),
     total_profit=('Profit', 'sum'),
@@ -595,16 +598,16 @@ for _, row in quarterly_region.iterrows():
     })
 
 
+# Summary document counts
 print(f"Created {len(summary_docs)} total summary documents")
 print(f"   Breakdown:")
 type_counts = Counter(doc['type'] for doc in summary_docs)
 for doc_type, count in type_counts.items():
     print(f"   - {doc_type}: {count}")
 
-# Saving to Json
 all_docs = []
 
-
+# Transaction metadata for doc_type separation
 order_meta = {}
 for order_id, group in df.groupby('Order ID', sort=False):
     group = group.reset_index(drop=True)
@@ -624,6 +627,7 @@ for order_id, group in df.groupby('Order ID', sort=False):
         'segment': first['Segment']
     }
 
+# Add transaction docs
 for i, row in order_texts.iterrows():
     all_docs.append({
         'doc_id': i,
@@ -631,6 +635,7 @@ for i, row in order_texts.iterrows():
         'metadata': order_meta[row['Order ID']]
     })
 
+# Add summary docs
 for i, doc in enumerate(summary_docs):
     all_docs.append({
         'doc_id': len(order_texts) + i,
