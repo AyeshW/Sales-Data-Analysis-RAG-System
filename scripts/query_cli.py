@@ -55,11 +55,11 @@ def print_banner(doc_count: int) -> None:
 
 
 def print_question_menu() -> None:
-    print("  ════════════════════════════════════════════════════════════════")
+    print("  =================================================================")
     print("  Example Questions:")
     for index, question in enumerate(PREDEFINED_QUESTIONS, start=1):
         print(f"    [{index}]  {question}")
-    print("  ════════════════════════════════════════════════════════════════")
+    print("  =================================================================")
     print("  Enter a number to pick a question, or type your own question.")
     print("  Commands: /exit  /debug  /model  /count  /help")
 

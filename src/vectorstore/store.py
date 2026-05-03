@@ -10,9 +10,10 @@ from src.config import config
 
 class VectorStore:
     """
-    Manages storage and retrieval of document embeddings using ChromaDB. Provides methods to add new documents and query for relevant documents based on embedding similarity and metadata filters.
+    Manages storage and retrieval of document embeddings using ChromaDB.
+    Provides methods to add new documents and query for relevant documents based on embedding similarity and metadata filters.
     """
-    
+
     def __init__(self) -> None:
         self.client = chromadb.PersistentClient(path=config.chroma_persist_dir)
         self.collection = self.client.get_or_create_collection(
